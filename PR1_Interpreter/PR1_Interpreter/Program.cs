@@ -1,0 +1,2 @@
+﻿using System.Linq;
+namespace PR1_Interpreter { internal static class Program { private static void Main(string[] args) => System.IO.File.WriteAllLines(args[1], System.IO.File.ReadAllLines(args[0]).Where(line => !line.StartsWith("-")).Select(line => line.Split(new char[] { '\t' }, System.StringSplitOptions.RemoveEmptyEntries).Join(",")).ToArray()); public static string Join<T>(this System.Collections.Generic.IEnumerable<T> inp, string with) => string.Join(with, inp); } }
